@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.nav-bar {
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8.5em; /* Set this to match the height of the logo or desired navbar height */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5em;
+  z-index: 1000; /* Ensures the navbar stays above other content */
+}
+
+.logo img {
+  height: 7.5em;
+  width: 7.5em;
+  object-fit: cover;
+}
+
+.search {
+  display: flex;
+  flex: 1;
+  margin: auto 0.5em;
+  align-items: center;
+}
+
+.search input {
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.search input {
+  flex: 1;
+  padding: 0.75em;
+  margin: 2px;
+}
+
+.search input:hover {
+  background-color: #f0f0f0;
+}
+
+.search input:focus {
+  outline: none;
+  background-color: #fff;
+  border: 2px solid #ffcc00;
+}
+
+.search button {
+  padding: 0.3em 0.5em;
+  margin: 2px;
+  background-color: #ffcc00;
+  color: black;
+  font-family: "Red Hat Display", sans-serif;
+  cursor: pointer;
+  border: 1px solid #ffcc00;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.search button:hover {
+  background-color: #e6b800;
+  border-color: #e6b800;
+}
+
+.nav-link,
+.icons {
+  display: flex;
+  gap: 1em;
+  margin: 0 1em;
+}
+
+.nav-link a,
+.icons a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-link a:hover,
+.icons a:hover {
+  color: #ffcc00;
+}
+
+.banners {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8.5em; /* Adjust this value based on the height of your navbar */
+  margin: 1.5em 0;
+  margin-top: 1em; /* Optional: Adds extra space between navbar and banners */
+}
+
+.banner {
+  position: relative;
+  flex: 1 1 calc(33.333% - 1em);
+  overflow: hidden;
+  width: 100%;
+  max-height: 30em;
+  object-fit: cover;
+  margin: 2em 0em;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.banner:hover img {
+  transform: scale(1.05);
+}
+
+.banner-text {
+  position: absolute;
+  bottom: 1.5em;
+  left: 1.5em;
+  color: white;
+}
+
+.banner-text h2 {
+  margin-bottom: 0.5em;
+  font-size: 2em;
+}
+
+.banner-text a {
+  color: #ffcc00;
+  background-color: black;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 0.25em;
+  transition: background-color 0.3s ease;
+}
+
+.banner-text a:hover {
+  background-color: #e6b800;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: flex-start;
+  margin: 10rem;
+}
+
+.product-card {
+  flex: 1 1 calc(25% - 1em); /* Adjust width based on the number of cards per row */
+  max-width: calc(
+    25% - 1em
+  ); /* Ensure cards don't exceed the calculated width */
+  min-width: max-content;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  padding: 1em;
+  background-color: white;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.product-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card h3 {
+  margin-bottom: 0.5em;
+  font-size: 1.25em;
+}
+
+.product-card p {
+  margin-bottom: 1em;
+  font-size: 1.1em;
+  color: #ffcc00;
+}
+
+.buy-now {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: #ffcc00;
+  color: black;
+  text-decoration: none;
+  border-radius: 0.25em;
+}
+
+.buy-now:hover {
+  background-color: #e6b800;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 calc(50% - 1em); /* Two cards per row */
+    max-width: calc(50% - 1em);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    flex: 1 1 100%; /* One card per row */
+    max-width: 100%;
+  }
+}
